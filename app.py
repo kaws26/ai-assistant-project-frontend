@@ -101,6 +101,7 @@ st.markdown("""
 """.format(datetime.now().strftime("%Y-%m-%d")), unsafe_allow_html=True)
 
 # Add history access link
+
 history_url = f"{BACKEND_URL}/history?user_id={st.session_state.user_id}"
 st.markdown(f"""
     <div style='margin-bottom: 1em;'>
@@ -158,8 +159,13 @@ with stylable_container(
             with st.spinner("Generating responses..."):
                 start_time = time.time()
                 try:
+                    payload = {
+                                "user_id": "your_user_id_here",
+                                "query": user_input
+                              }
                     response = requests.post(
-                        f"{BACKEND_URL}/generate?user_id={st.session_state.user_id}&query={query}",
+                        f"{BACKEND_URL}/generate",
+                        json=payload
                     )
                     response.raise_for_status()
                     data = response.json()
