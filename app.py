@@ -160,8 +160,8 @@ with stylable_container(
                 start_time = time.time()
                 try:
                     payload = {
-                                "user_id": "your_user_id_here",
-                                "query": user_input
+                                "user_id": st.session_state.user_id,
+                                "query": query
                               }
                     response = requests.post(
                         f"{BACKEND_URL}/generate",
