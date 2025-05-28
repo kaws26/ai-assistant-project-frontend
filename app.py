@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://ai-assistant-project-backend-ww0h.onrender.com")
 USER_ID = os.getenv("USER_ID", "default_user")
 
 # Initialize session state
