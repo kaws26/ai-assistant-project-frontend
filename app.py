@@ -139,7 +139,10 @@ with st.sidebar:
         st.info("No history yet. Your conversations will appear here.")
 
 # Main form
-with stylable_container(css_styles="background: #fff; border-radius: 16px; padding: 2em 2em 1.5em 2em; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom:2em;"):
+with stylable_container(
+    key="input_container",
+    css_styles="background: #fff; border-radius: 16px; padding: 2em 2em 1.5em 2em; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom:2em;"
+):
     with st.form("input_form"):
         query = st.text_area(
             "Enter your query:",
