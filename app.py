@@ -159,8 +159,7 @@ with stylable_container(
                 start_time = time.time()
                 try:
                     response = requests.post(
-                        f"{BACKEND_URL}/generate",
-                        json={"user_id": st.session_state.user_id, "query": query}
+                        f"{BACKEND_URL}/generate?user_id={st.session_state.user_id}&query={query}",
                     )
                     response.raise_for_status()
                     data = response.json()
